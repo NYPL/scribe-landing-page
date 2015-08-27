@@ -48,7 +48,7 @@
 
 @mixin keyframes($name) {
   @-webkit-keyframes #{$name} {
-    @content; 
+    @content;
   }
   @-moz-keyframes #{$name} {
     @content;
@@ -58,7 +58,7 @@
   }
   @keyframes #{$name} {
     @content;
-  } 
+  }
 }
 
 @mixin opacity($opacity: 0.5) {
@@ -86,4 +86,19 @@
   -webkit-transition: $params;
   -ms-transition:     $params;
   transition:         $params;
+}
+
+@mixin transition-list($values...){
+  -moz-transition:    $values;
+  -o-transition:      $values;
+  -webkit-transition: $values;
+  -ms-transition:     $values;
+  transition:         $values;
+}
+
+@mixin transition-transform($params) {
+  -webkit-transition: -webkit-transform $params;
+     -moz-transition: -moz-transform $params;
+       -o-transition: -o-transform $params;
+          transition: transform $params;
 }
